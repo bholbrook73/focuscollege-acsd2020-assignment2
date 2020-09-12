@@ -1,4 +1,6 @@
 
+import calcWallStuds from './modules/totalWallStuds';
+
 // importing and requiring yargs to use in apllication
 import yargs = require('yargs');
 
@@ -48,3 +50,5 @@ yargs.help();
 
 // tell yargs to parge the parameters
 yargs.parse();
+
+console.log(calcWallStuds(8, 18));
