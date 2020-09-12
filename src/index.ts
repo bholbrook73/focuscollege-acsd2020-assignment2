@@ -1,6 +1,7 @@
 // import yargs to re-use code from someone else that has already 
 // solved the complexities of parsing command line arguments
 import yargs = require('yargs');
+import { calculateHouseRequirements } from './gerald';
 
 let parameters = 
 
@@ -59,9 +60,11 @@ yargs.command(
         // NOTE TO STUDENTS:                                                                   |
         // This is where you write your application with access to the command line arguments  |
         // ----------------------------------------------------------------------------------- |
-
+        const requirements = calculateHouseRequirements( args.width, args.length );
+        
+        
         // inspect the output to infer how you might access the arguments
-        console.log( args )
+        console.log( requirements );
 
     }
 
