@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "prestart": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "poststart": "echo \"All done! \" ",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Bradley Holbrook",
+  "author": "Khatab AL-DAGHISTANI",
   "license": "ISC",
   "dependencies": {
     "yargs": "^15.4.1"
