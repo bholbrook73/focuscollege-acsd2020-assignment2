@@ -2,7 +2,7 @@
 import calcWallStuds from './modules/totalWallStuds';
 import buildHouse from './modules/buildHouse';
 import accountForWaste from './modules/accountForWaste';
-import postsInWall from './modules/postsInWall';
+import postsInBuilding from './modules/postsInBuilding';
 import totalWallStuds from './modules/totalWallStuds';
 
 
@@ -44,7 +44,7 @@ let parameters
         let length:number = args.length;
         let width:number = args.width;
         
-        console.log("The total number of 2x4's needed is: ", postsInWall(length, width));
+        console.log("The total number of 2x4's needed is: ", postsInBuilding(length, width));
         console.log("The total number of 4x4's needed is: ", totalWallStuds(length, width));
 
     }

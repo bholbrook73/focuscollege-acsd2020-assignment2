@@ -2,9 +2,6 @@
 
 import buildHouse from './buildHouse';
 import accountForWaste from './accountForWaste';
-import postsInWall from './postsInWall';
-
-let post = 3.5;
 
 export default function totalWallStuds( houseWidthInFeet:number, houseLengthInFeet:number ){
 
