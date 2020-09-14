@@ -3,7 +3,6 @@
 // Multiplies feet into inches 
 function feettoinches (Wallfeet:number) {
     let lengthmultiplied = Wallfeet * 12;
-    console.log (lengthmultiplied,"beams inches")
     return lengthmultiplied
 }
 

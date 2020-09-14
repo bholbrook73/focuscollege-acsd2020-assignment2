@@ -10,7 +10,6 @@ const Studspacing = 16
 // Every 20 feet a post is added so 3.5 inches needs to be subtracted per post
 function Walltoinches (wallinfeet:number){
     let deductions = wallinfeet * 12
-    console.log ("deductions",deductions)
         if ((deductions >=0) && (deductions <=239)) //0 to 19.9 feet ( in inches)
         return deductions - 10
 
