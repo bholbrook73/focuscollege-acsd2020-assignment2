@@ -1,5 +1,8 @@
 
 import calcWallStuds from './modules/totalWallStuds';
+import buildHouse from './modules/buildHouse';
+import accountForWaste from './modules/accountForWaste';
+
 
 // importing and requiring yargs to use in apllication
 import yargs = require('yargs');
@@ -12,7 +15,7 @@ let parameters
 
     yargs.command(
     //Parameter #1 this will be what we type into the command line first
-    'calc-lumber-needed',
+    'calc-lumber',
     
     //Parameter #2 describes the command so that the --help flag is helpful
     'Calculate the number of 2x4s and 4x4s needed to build a house',
@@ -34,16 +37,27 @@ let parameters
     },
 
     // Parameter 4 defines the function we want to run once the arguments are parsed
-    function( args ){
-        
-        // ----------------------------------------------------------------------------------- |
-        // NOTE TO STUDENTS:                                                                   |
-        // This is where you write your application with access to the command line arguments  |
-        // ----------------------------------------------------------------------------------- |
+    function ( args ){
 
-        console.log(args);
+        let length:number = args.length;
+        let width:number = args.width;
+        
+        function totalWallStuds( houseWidthInFeet:number, houseLengthInFeet:number ){
+
+            let totalStuds = buildHouse( houseWidthInFeet, houseLengthInFeet );
+            let studsPlusWaste = accountForWaste( totalStuds );
+
+            return {
+                totalStuds: totalStuds,
+                studsPlusWaste: studsPlusWaste
+            };
+        }
+
+        console.log(totalWallStuds(length, width));
+
     }
 );
+
 
 // tell yargs to include the --help flag 
 yargs.help();
@@ -51,4 +65,3 @@ yargs.help();
 // tell yargs to parge the parameters
 yargs.parse();
 
-console.log(calcWallStuds(8, 18));

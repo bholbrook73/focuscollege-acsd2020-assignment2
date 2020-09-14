@@ -3,6 +3,7 @@
 import buildHouse from './buildHouse';
 import accountForWaste from './accountForWaste';
 
+let post = 3.5;
 
 function totalWallStuds( houseWidthInFeet:number, houseLengthInFeet:number ){
 
