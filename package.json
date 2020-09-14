@@ -7,7 +7,7 @@
     "prestart": "tsc",
     "start": "node dist/index.js"
   },
-  "author": "Bradley Holbrook",
+  "author": "Derrick",
   "license": "ISC",
   "dependencies": {
     "yargs": "^15.4.1"
