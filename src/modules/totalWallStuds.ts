@@ -5,16 +5,10 @@ import accountForWaste from './accountForWaste';
 
 let post = 3.5;
 
-function totalWallStuds( houseWidthInFeet:number, houseLengthInFeet:number ){
+export default function totalWallStuds( houseWidthInFeet:number, houseLengthInFeet:number ){
 
     let totalStuds = buildHouse( houseWidthInFeet, houseLengthInFeet );
     let studsPlusWaste = accountForWaste( totalStuds );
-
-    return {
-        totalStuds: totalStuds,
-        studsPlusWaste: studsPlusWaste
-    };
+    return studsPlusWaste;
 
 }
-
-export default totalWallStuds;

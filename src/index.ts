@@ -2,6 +2,8 @@
 import calcWallStuds from './modules/totalWallStuds';
 import buildHouse from './modules/buildHouse';
 import accountForWaste from './modules/accountForWaste';
+import postsInWall from './modules/postsInWall';
+import totalWallStuds from './modules/totalWallStuds';
 
 
 // importing and requiring yargs to use in apllication
@@ -42,18 +44,8 @@ let parameters
         let length:number = args.length;
         let width:number = args.width;
         
-        function totalWallStuds( houseWidthInFeet:number, houseLengthInFeet:number ){
-
-            let totalStuds = buildHouse( houseWidthInFeet, houseLengthInFeet );
-            let studsPlusWaste = accountForWaste( totalStuds );
-
-            return {
-                totalStuds: totalStuds,
-                studsPlusWaste: studsPlusWaste
-            };
-        }
-
-        console.log(totalWallStuds(length, width));
+        console.log("The total number of 2x4's needed is: ", postsInWall(length, width));
+        console.log("The total number of 4x4's needed is: ", totalWallStuds(length, width));
 
     }
 );
