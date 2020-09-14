@@ -21,9 +21,9 @@ yargs.command(
         }
  },
  
-    function Result ( moo ){
-        let Studs = Housebuilt( Number( moo.width ), Number( moo.length ));
-        let Beams = Totalbeams( Number( moo.width ), Number( moo.length ));
+    function Result ( input ){
+        let Studs = Housebuilt( Number( input.width ), Number( input.length ));
+        let Beams = Totalbeams( Number( input.width ), Number( input.length ));
     console.log("Gerald you need", Studs, "studs","and", Beams, "4x4s!")
 }  
    

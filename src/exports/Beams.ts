@@ -23,8 +23,11 @@ function TwoWalls (Wall12:number){
         
         else ((Wallinches >=720) && (Wallinches <=959)) // 60 to 79.9 feet
             return 6
+        
+        // This could go on and on..
 }
 
+// Simple function that multiplies by 1.10 for 10% waste
 function Percentten (onepointone:number){
     let percent = onepointone * 1.10 
     return percent
