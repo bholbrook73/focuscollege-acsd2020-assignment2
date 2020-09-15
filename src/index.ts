@@ -104,23 +104,26 @@ function accountForWaste( perfectNumberOfStuds:number ){
 
  let perfectNumberOfStuds = Math.round(totalstuds1+totalstuds2+totalstuds3+totalstuds4) * 1.1;
  
+//whenever the number of beams increases by one the number of studs will decrease by one 
+// the beams number increases wherever the size of 8'  wall increases by a full length board (8).
+// so for every 8' we need a beam.
+ 
 
-// these functions  will calculate the number of beams neede for wall 1 and 3
- let beamsnumber = 4 ;
+function beams(wall_size:number){
+   return wall_size;
+}
+ let beamsnumber1 = beams(Math.ceil(args.width)) * 0.1;
+ let beamsnumber2 = beams(Math.ceil(args.length)) * 0.1; 
+ let beamsnumber3 = beams(Math.ceil(args.width)) * 0.1;   
+ let beamsnumber4 = beams(Math.ceil(args.length)) * 0.1; 
 
- function numberofbeams(walllengthinfeet:number, wallwidthinfeet:number){
-if (walllengthinfeet >= 16 && wallwidthinfeet > 16 )
-console.log('studs', (perfectNumberOfStuds -1), 'beams', (beamsnumber + 2))
+ console.log('number of beams required for this house',beamsnumber1)
 
- }
+ 
+  console.log()
+    
+});
 
-let test = numberofbeams(args.length, args.width)
-let test2 = numberofbeams(args.width, args.length)
-       
-
-    }
-
-);
 
 yargs.help();
 
