@@ -1,8 +1,9 @@
+//Import the house building function from the board calculator module.
+import BuildHouse from './BoardCalculator'
+
 // import yargs to re-use code from someone else that has already 
 // solved the complexities of parsing command line arguments
 import yargs = require('yargs');
-
-let parameters = 
 
 // create a new yargs "command"
 yargs.command(
@@ -54,14 +55,8 @@ yargs.command(
     // the parsed arguments will be provided via the first paramater passed in
     // we've called it 'args' in this function
     function( args ){
-        
-        // ----------------------------------------------------------------------------------- |
-        // NOTE TO STUDENTS:                                                                   |
-        // This is where you write your application with access to the command line arguments  |
-        // ----------------------------------------------------------------------------------- |
-
-        // inspect the output to infer how you might access the arguments
-        console.log( args )
+        //Use the command line arguments to run the imported function.
+        BuildHouse(args.length, args.width);
 
     }
 
