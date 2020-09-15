@@ -3,6 +3,7 @@
 ![Gerald's Image]
 
 ---
+### If you're a developer please find "About this application" at the bottom of the readme.
 ---
 
 
@@ -13,6 +14,11 @@ To run a calculation, pass in two parameters:
 * The Width of one wall 
 * The Length of one wall 
 * Will return with total studs and beams needed for your project !
+
+In case you have not the dependancies, you need to run:
+*  Npm install
+*  npm i yargs
+
 #### Examples:
 ```
 Using Node to run the application: 
@@ -93,8 +99,16 @@ Gerald has also mentioned that he finds it difficult to re-write the application
 * Boards: 93
 * Beams: 7
 ---
----
-## Note to other developers
+## About this application
+The scenario provided by Gerald had some issues so i've adjusted the equation to return the proper amount of lumber.
+* In the example Gerald did not add two extra 2x4s for additional beams placed in walls longer than 20 feet.
+  +  The calculator ADDS two 2x4s for every beam added because for example a 16x24 house without two extra 2x4 for each additional beam makes for a weak point at the additional beam(s).
+  +  For every beam added you are essentially creating a new wall within a wall.
+
+* Arguments return total lumber needed with without 10% waste and with 10% rounded up.
+
+
+
 I used the yargs package [Yargs package] for the processing of the command line parameters. 
 
 [Yargs package]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet

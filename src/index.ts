@@ -24,10 +24,17 @@ yargs.command(
     function Result ( input ){
         let Studs = Housebuilt( Number( input.width ), Number( input.length ));
         let Beams = Totalbeams( Number( input.width ), Number( input.length ));
-    console.log("Gerald you need", Studs, "studs","and", Beams, "4x4s!")
+    console.log("Gerald you need", Studs, "2x4s and", Beams, "4x4s without 10% waste!")
+    console.log("You will need", Math.ceil(TenPercent(Studs)), "2x4s and", Math.ceil (TenPercent(Beams)), "4x4s with 10% waste.")
 }  
-   
+
 );
+
+// Function to add 10% waste
+function TenPercent (onepointone:number){
+    let percent = onepointone * 1.10 
+    return percent
+}
  
 yargs.help();
 yargs.parse();
