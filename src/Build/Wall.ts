@@ -62,9 +62,9 @@ function getBoards(outerLengthInFeet: number){
     // less than 20 feet, 
     if(outerLengthInFeet < maxLengthToPutBeamInFeet && (outerLengthInFeet > 0)){
 
-        let bottomAndTopBeam = 2 * (Math.ceil(outerLengthInFeet/maxBoardLengthInFeet));
-        let sideBeams = 2 ;
-        boardsAround = 2 + (2 * sideBeams) + bottomAndTopBeam ;
+        let bottomAndTopBeamBoards = 2 * (Math.ceil(outerLengthInFeet/maxBoardLengthInFeet));
+        let sideBeamsBoards = 2 ;
+        boardsAround = 2 + (2 * sideBeamsBoards) + bottomAndTopBeamBoards ;
 
     // greater than 20 feet, extra boards for cornors and in between
     }else if(outerLengthInFeet > maxLengthToPutBeamInFeet && (outerLengthInFeet > 0)){
@@ -105,17 +105,15 @@ return boards;
 //calculate total beams(4x4) and total studs required for one wall
 export default function calcWall (outerLengthInFeet :number){
     
-    let beams     = getBeam(outerLengthInFeet);
-   
-    let boards    = getBoards(outerLengthInFeet);
-    
+    let beams     = getBeam(outerLengthInFeet);   
+    let boards    = getBoards(outerLengthInFeet);    
     let innerWall = calcInnerWallwidth(outerLengthInFeet);
 
     //Divided by section to calculate the total number of lumer need for a wall
     let studs = innerWall / distanceBetweenStudsInInch;
 
     //Each wall required one 2x4 on the top, bottom, and sides
-    studs = 3 + Math.ceil(outerLengthInFeet/maxBoardLengthInFeet) + studs;
+    studs = 4 + Math.ceil(outerLengthInFeet/maxBoardLengthInFeet) + studs;
 
     //final calculation of lumbers
     studs = Math.ceil(studs) + boards;

@@ -130,10 +130,10 @@ _Wall 2 (24 feet)_
 
 | House Measurement | Studs Required | Beams Required |     Last Test Run by     |
 | ----------------- | -------------- | ---------------| ------------------------ |
-|       8 x 8       |       40       |        5       | **Khatab AL DAGHISTANI** |
-|      18 x 8       |       60       |        5       | **Khatab AL DAGHISTANI** |
-|      16 x 24      |       86       |        8       | **Khatab AL DAGHISTANI** |
-|      49 x 22      |       148      |        14      | **Khatab AL DAGHISTANI** |
+|       8 x 8       |       44       |        5       | **Khatab AL DAGHISTANI** |
+|      18 x 8       |       64       |        5       | **Khatab AL DAGHISTANI** |
+|      16 x 24      |       91       |        7       | **Khatab AL DAGHISTANI** |
+|      49 x 22      |       152      |        11      | **Khatab AL DAGHISTANI** |
 ---
 
 ### Note to Other developers
