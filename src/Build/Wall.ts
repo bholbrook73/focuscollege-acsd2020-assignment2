@@ -42,14 +42,14 @@ function getBeam (outerLengthInFeet: number){
     
     // greater than 20 feet, extra beams 
     }else if(outerLengthInFeet > maxLengthToPutBeamInFeet && (outerLengthInFeet > 0)){
-            beams = 2 + Math.floor( outerLengthInFeet / maxBoardLengthInFeet);
-    
+            beams = 1 + ( outerLengthInFeet / maxBoardLengthInFeet);
+
         // other = zero
         }else {
-        beams =  0;
+        beams =  0;  
     };
 
-return beams;
+return Math.floor(beams);
 }
 
 //calculate total Boards required 
