@@ -44,8 +44,8 @@ let parameters
         let length:number = args.length;
         let width:number = args.width;
         
-        console.log("The total number of 2x4's needed is: ", postsInBuilding(length, width));
-        console.log("The total number of 4x4's needed is: ", totalWallStuds(length, width));
+        console.log("The total number of 2x4's needed is: ", totalWallStuds(length, width));
+        console.log("The total number of 4x4's needed is: ", postsInBuilding(length, width));
 
     }
 );

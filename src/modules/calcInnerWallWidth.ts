@@ -5,7 +5,7 @@
 const postWidthInInches = 3.5;
 
 export default function calcInnerWallWidth( outerWallWidthInFeet:number ){
-    var innerWallWidthInInches:number;
+    let innerWallWidthInInches:number;
     
     if(outerWallWidthInFeet >= 40){
         //Two or More Beams Required

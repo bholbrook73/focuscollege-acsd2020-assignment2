@@ -2,8 +2,8 @@ import calcInnerWallWidth from './calcInnerWallWidth';
 //This function will find out how many posts in the building
 export default function postsInBuilding(houseWidthInFeet:number, houseLengthInFeet:number){
 
-    var postsInWallWidth = 0; 
-    var postsInWallLength = 0;
+    let postsInWallWidth = 0; 
+    let postsInWallLength = 0;
     //Building will have at least 4 posts regardless of size
     let totalPosts:number = 4;
 
