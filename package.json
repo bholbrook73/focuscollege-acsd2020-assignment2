@@ -1,7 +1,7 @@
 {
   "name": "geralds-contracting",
   "version": "1.0.0",
-  "description": "",
+  "description": "This respository is intended for the use of Focus College Students enrolled in the  Advanced Certificate of Software Development located in Kelowna, BC and Surrey, BC.",
   "main": "index.js",
   "scripts": {
     "prestart": "tsc",
@@ -15,5 +15,13 @@
   "devDependencies": {
     "@types/node": "^14.6.4",
     "@types/yargs": "^15.0.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TylerMatzelle/focuscollege-acsd2020-assignment2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TylerMatzelle/focuscollege-acsd2020-assignment2/issues"
+  },
+  "homepage": "https://github.com/TylerMatzelle/focuscollege-acsd2020-assignment2#readme"
 }
