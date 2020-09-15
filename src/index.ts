@@ -51,6 +51,9 @@ yargs.command(
         // format:  node dist/index.js [command] --[parameter] [value] --[parameter] [value]
         // example: node dist/index.js calc-lumber-required --width 8 --legth 8
         // node dist/index.js calc-lumber-required --width 8 --legth 8
+        //npm start -- calc-lumber-required --width 18 --length 8
+        //this was an example, why then the example is different :U
+
         length: {
             type: 'number',
             alias: 'l',
@@ -76,8 +79,8 @@ yargs.command(
         length:Number;
         width:Number;
 
-        let length = args.length;
-       let width = args.width;
+        let length = args.l;
+        let width = args.w;
 
 
 

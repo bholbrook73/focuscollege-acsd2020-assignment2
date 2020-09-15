@@ -3,41 +3,28 @@
 This respository is intended for the use of Focus College Students enrolled in the 
 Advanced Certificate of Software Development located in Kelowna, BC and Surrey, BC.
 
----
-
-## Deadline for Submissions
-
-The deadline for this assignment is 5PM on TUESDAY SEPTEMBER 15th, 2020.
 
 ---
 
 #### Begining of Documentation for Gerald's Calculator - Assignment 2
 
+------
+## Running the program.
+----
+If
+* repo installed correctly
+* npm install has installed dependencies.
 
+Enter that into the command line below editing the values as necessary.
 
+~~~~~
 
+node dist/index.js calc-lumber-required --width 8 --legth 8
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~~~
 
 -----
 
+## Notes & Known Issues.
 
-
-
-## Notes
-
-This is a PUBLIC repository attached to your github account and something that you can demonstrate to potential employers. 
-Take care to ensure professionalism for both you and your team's sake. This will be the first entry into your professional
-portfolio.
+**While the project runs it does not output the correct values**
