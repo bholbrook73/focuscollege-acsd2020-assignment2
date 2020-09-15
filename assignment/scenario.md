@@ -80,11 +80,11 @@ Gerald has given us an example to help us understand his intentions, using a 16'
 
     [ +25 boards, +1 Beam ]
 
-  * Perfect calculation: 84 boards, 6 beams
+  * Perfect calculation: 82 boards, 6 beams
   
   * Add 10% for Waste
 
-    [ +8.4 boards rounded up to 9, +0.6 beams rounded up to 1 ]
+    [ +8.2 boards rounded up to 9, +0.6 beams rounded up to 1 ]
 
   * TOTAL PURCHASE:
     

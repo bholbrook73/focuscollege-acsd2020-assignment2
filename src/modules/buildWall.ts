@@ -12,7 +12,9 @@ export default function buildWall( outerLengthInFeet:number ){
     let studsInsideWall = studsInLength( length, distanceBetweenStudsInInches );
     let studsOnTopAndBottom = calcStudsOnTopAndBottom( length );
     let totalStuds = studsInsideWall + studsOnTopAndBottom;  // HAD PLUS ONE HERE
-    let totalPosts = Math.floor(outerLengthInFeet / 20); 
+    if(outerLengthInFeet >= 20){
+        totalStuds += 1;
+    }
     return totalStuds;
    
 }
