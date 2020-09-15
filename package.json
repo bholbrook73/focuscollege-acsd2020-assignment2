@@ -1,13 +1,13 @@
 {
   "name": "geralds-contracting",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.0.0",
+  "description": "Application that returns 2x4's and 4x4's needed to frame the walls of a house given 2 parameters",
   "main": "index.js",
   "scripts": {
     "prestart": "tsc",
     "start": "node dist/index.js"
   },
-  "author": "Bradley Holbrook",
+  "author": "Colbyk",
   "license": "ISC",
   "dependencies": {
     "yargs": "^15.4.1"

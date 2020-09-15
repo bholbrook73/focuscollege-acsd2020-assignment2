@@ -43,7 +43,7 @@ Gerald has given us an example to help us understand his intentions, using a 16'
   * Wall 1 is under 20 feet, so does not need a post in it.
   * 2 boards required for the bottom
   * 2 boards required for the top
-  * 13 vertical boards required in the wall, including the sides
+  * 12 vertical boards required in the wall, including the sides
   * Total: 17 boards.
 
 ### Wall 2 (24 feet)
@@ -64,9 +64,9 @@ Gerald has given us an example to help us understand his intentions, using a 16'
     
     [ +4 Beams ]
 
-  * Wall 1 requries 17 boards 
+  * Wall 1 requries 16 boards 
   
-    [ +17 Boards ]
+    [ +16 Boards ]
 
   * Wall 2 requires 25 boards and one extra beam 
     
@@ -74,21 +74,21 @@ Gerald has given us an example to help us understand his intentions, using a 16'
 
   * Wall 3 is the same as wall 1
 
-    [ +17 Boards ]
+    [ +16 Boards ]
 
   * Wall 4 is the same as wall 2
 
     [ +25 boards, +1 Beam ]
 
-  * Perfect calculation: 84 boards, 6 beams
+  * Perfect calculation: 82 boards, 6 beams
   
   * Add 10% for Waste
 
-    [ +8.4 boards rounded up to 9, +0.6 beams rounded up to 1 ]
+    [ +8.2 boards rounded up to 9, +0.6 beams rounded up to 1 ]
 
   * TOTAL PURCHASE:
     
-    * Boards: 93
+    * Boards: 91
 
     * Beams: 7   
 
