@@ -56,7 +56,7 @@ function twentyforty(number:number){
 
 //40-59.9
 function fortysixty(number:number){
-    let side1 = number % 66 - 6.5 // or one 4x4 and two 2x4s
+    let side1 = number % 33 - 6.5 // or one 4x4 and two 2x4s
         let sideone = side1 / Studspacing
     let side2 = number % 33 - 10 // or two 4x4 and two 2x4s
         let sidetwo = (side2 / 16)
