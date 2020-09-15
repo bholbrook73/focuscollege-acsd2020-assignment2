@@ -1,22 +1,30 @@
-# Focus College ACSD Assignment 2
+### Focus College ACSD Assignment 2
 
 This respository is intended for the use of Focus College Students enrolled in the 
 Advanced Certificate of Software Development located in Kelowna, BC and Surrey, BC.
 
+
 ---
 
-You can remove everything below the above line once you're ready to edit this file.
+#### Begining of Documentation for Gerald's Calculator - Assignment 2
 
-## Getting Started
+------
+## Running the program.
+----
+If
+* repo installed correctly
+* npm install has installed dependencies.
 
-Please read the [Assignment Requirements](./assignment/assignment.md).
+Enter that into the command line below editing the values as necessary.
 
-## Deadline for Submissions
+~~~~~
 
-The deadline for this assignment is 5PM on TUESDAY SEPTEMBER 15th, 2020.
+node dist/index.js calc-lumber-required --width 8 --legth 8
 
-## Notes
+~~~~~
 
-This is a PUBLIC repository attached to your github account and something that you can demonstrate to potential employers. 
-Take care to ensure professionalism for both you and your team's sake. This will be the first entry into your professional
-portfolio.
+-----
+
+## Notes & Known Issues.
+
+**While the project runs it does not output the correct values**
