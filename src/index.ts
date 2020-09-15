@@ -103,34 +103,20 @@ function accountForWaste( perfectNumberOfStuds:number ){
  
 
  let perfectNumberOfStuds = Math.round(totalstuds1+totalstuds2+totalstuds3+totalstuds4) * 1.1;
+ 
 
- // now this function will be calculating the number of beams needed for the house adding to the four beams in the corner.
-
+// these functions  will calculate the number of beams neede for wall 1 and 3
  let beamsnumber = 4 ;
- if (w1 > 16 || w2 > 16 || w3 > 16 || w4 > 16)  
-{
-    let totalstudss = perfectNumberOfStuds - 1;
-    let beams = beamsnumber + 2;
-    console.log('studs needed for the house', Math.round(totalstudss), ' beams needed', Math.ceil(beams *1.1) );
-} 
-else if (w1 <= 16 || w2 <= 16 || w3 <= 16 || w4 <= 16)
-{
-    let totalstudss = perfectNumberOfStuds + 0;
-    let beams = beamsnumber + 0;
-    console.log('studs needed for the house', Math.round(totalstudss), 'beams needed', Math.ceil(beams * 1.1) )
-}
- //-------------------------------------------------------------------------------------------------------//
- // I also need to adjust the if operator for the numbers that are bigger than number 32// ---------------//
- //I will be checking out the master branch and reviewing your completed application there. --------------//
- // look at the following// ------------------------------------------------------------------------------//
- //tsc ---------------------------------------------------------------------------------------------------//
- //npm start -- calc-wood-needed --width 8 --length 8 -----------------------------------------------------//
- //npm start -- calc-wood-needed --width 18 --length 8 ----------------------------------------------------//
- //npm start -- calc-wood-needed --width 16 --length 24 ---------------------------------------- ----------//
- //npm start -- calc-wood-needed --width 49 --length 22 ---------------------------------------------------//
- //--------------------------------------------------------------------------------------------- ----------//
 
-        
+ function numberofbeams(walllengthinfeet:number, wallwidthinfeet:number){
+if (walllengthinfeet >= 16 && wallwidthinfeet > 16 )
+console.log('studs', (perfectNumberOfStuds -1), 'beams', (beamsnumber + 2))
+
+ }
+
+let test = numberofbeams(args.length, args.width)
+let test2 = numberofbeams(args.width, args.length)
+       
 
     }
 
