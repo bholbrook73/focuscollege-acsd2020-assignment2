@@ -1,46 +1,36 @@
-// import yargs to re-use code from someone else that has already 
-// solved the complexities of parsing command line arguments
+// Import buildHouse from House to use it here
+import calcWoodNeeded from './Build/WoodNeeded';
+
+// import yargs to re-use code it, more information go to
+// www.npmjs.com/package/yargs
 import yargs = require('yargs');
 
-let parameters = 
 
-// create a new yargs "command"
+
+// build interactive command line by using yargs to pass user arguments
 yargs.command(
 
-    // yargs.command paramater #1
-    // name the command with no spaces
-    // this will be the first parameter we send:
-    // format:  node dist/index.js [command]
-    // example: node dist/index.js calc-wall-studs
+    //alice to apply yargs
     'calc-wood-needed',
 
-    // yargs.command paramater #2
-    // describe the command so that the --help flag is helpful
+
+    //--help flag for user
     'Calculate the number of studs required to stick frame a house for Gerald',
 
-    // yargs.command paramater #3
-    // define the parameters we need for our command
+    //yargs parameters
     {
 
-        // format:  node dist/index.js [command] --[parameter] [value]
-        // example: node dist/index.js calc-wall-studs --width 8
+    //alice for user parsing 
         width: {
             
-            // format:  node dist/index.js [command] --[parameter] [value must be number]
-            // example: node dist/index.js calc-wall-studs --width 8
             type: 'number',
 
-            // format:  node dist/index.js [command] -[parameter] [value]
-            // example: node dist/index.js calc-wall-studs -w 8
             alias: 'w',
 
-            // this adds the description for the --help flag
             description: 'The width of the house'
 
         },
 
-        // format:  node dist/index.js [command] --[parameter] [value] --[parameter] [value]
-        // example: node dist/index.js calc-wall-studs --width 8 --legth 8
         length: {
             type: 'number',
             alias: 'l',
@@ -48,20 +38,34 @@ yargs.command(
         }
 
     },
-
-    // yargs.command parameter #4
-    // define the function we want to run once the arguments are parsed
-    // the parsed arguments will be provided via the first paramater passed in
-    // we've called it 'args' in this function
     function( args ){
-        
-        // ----------------------------------------------------------------------------------- |
-        // NOTE TO STUDENTS:                                                                   |
-        // This is where you write your application with access to the command line arguments  |
-        // ----------------------------------------------------------------------------------- |
 
-        // inspect the output to infer how you might access the arguments
-        console.log( args )
+         // User inputs (building dimensions)
+         let houseLengthInFeet =  Number( args.length) ;
+         let houseWidthInFeet = Number( args.width ) ;
+         
+ 
+         // Calculate total purchase beams + studs
+         let purchaseWoods = calcWoodNeeded(houseWidthInFeet, houseLengthInFeet);
+        
+         //total studs
+         let nbr_2x4 = purchaseWoods.totalStuds;
+         let nbr_2x4_PlusWast = purchaseWoods.wastStuds; 
+
+        //total beams
+         let nbr_4x4 = purchaseWoods.totalbeams;
+         let nbr_4x4_PlusWast = purchaseWoods.wastBeams;
+ 
+        //Output total purchase (Beams and Stud)
+         console.log("**************************************************************")
+         
+         console.log("House, Number of lumbers needed without Wast = " , nbr_2x4);
+         console.log("House, Number of lumbers needed with Wast = " , nbr_2x4_PlusWast);
+         
+         console.log("**************************************************************")
+ 
+         console.log("House, Number of beams needed without Wast = " , nbr_4x4);
+         console.log("House, Number of beams needed with Wast = " , nbr_4x4_PlusWast);
 
     }
 
