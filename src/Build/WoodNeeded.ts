@@ -4,14 +4,14 @@ import buildHouse from './House';
 // Import calcWall from Wall to use it here
 import calcWast from './Waste';
 
-//calculat total beams(4x4) and total studs(2x4) required for a house  and wast
+//calculate total beams(4x4) and total studs(2x4) required for a house  and wast
 export default function  calcWoodNeeded (houseWidthInFeet: number, houseLengthInFeet: number) {
 
-    //calculat studs(2x4) and wast
+    //calculate studs(2x4) and wast
     let totalStuds = buildHouse(houseWidthInFeet,houseLengthInFeet).studs;
     let wastStuds = calcWast( totalStuds );
 
-   //calculat beams(4x4) and wast
+   //calculate beams(4x4) and wast
     let totalbeams = buildHouse(houseWidthInFeet,houseLengthInFeet).beams;
     let wastBeams = calcWast( totalbeams);
     
