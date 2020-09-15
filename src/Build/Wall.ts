@@ -15,8 +15,8 @@ const maxBoardLengthInFeet = 8;
 const distanceBetweenStudsInInch = 16;
 
 //for beams
-let maxLengthToPutBeamInFeet = 20;
-let distanceForbetweenBeamInFeet = 16;
+const maxLengthToPutBeamInFeet = 20;
+const distancebetweenBeamInFeet = 16;
 
 //calculat total wood(4x4 & 2x4) for one wall
 // ********************************************
@@ -25,63 +25,124 @@ let distanceForbetweenBeamInFeet = 16;
 //returns the number of inches inside the posts
 function calcInnerWallwidth (outerWallWidthInFeet:number){
 
-    let innerWallWidthInInches  = convertToInch(outerWallWidthInFeet)  - (postWidthInInches -twoByFourHeightInInches) * 2;
+    let innerWallWidthInInches  = convertToInch(outerWallWidthInFeet)  - ((postWidthInInches + twoByFourHeightInInches) * 2);
+    innerWallWidthInInches = innerWallWidthInInches - ( distanceBetweenStudsInInch - twoByFourHeightInInches);
     return innerWallWidthInInches;
 }
 
-// //this calculates the number of studs required for a length of the wall
-// function studsInLength (lengthInInches:number, distanceApartInches:number){
-
-//     return Math.ceil(lengthInInches / distanceApartInches);
-// }
-
-// function calcStudsInTopAndBottom(lengthInInches:number){
-
-//     let maxBoardLengthInInches = convertToInch(maxBoardLengthInFeet);
-
-// return Math.ceil(lengthInInches / maxBoardLengthInInches) * 2;
-// }
-
 //calculat total Beams(4x4) required 
-function getFourByFour (outerLengthInFeet: number){
+function getBeam (outerLengthInFeet: number){
 
-    let fourByFour = 0;
-    let lengthInInches = calcInnerWallwidth(outerLengthInFeet);
+    let beams =  0;
+ 
+    // less than 20 feet, no extra beams adding
+    if(outerLengthInFeet < maxLengthToPutBeamInFeet && (outerLengthInFeet > 0)){
 
-    // greater than 20 feet to add extra beams or no adding, beam = 0
-    if (outerLengthInFeet > maxLengthToPutBeamInFeet){ 
-        fourByFour  = Math.ceil( lengthInInches / convertToInch(distanceForbetweenBeamInFeet ));    
-    } 
+        beams = 2;
+    
+    // greater than 20 feet, extra beams 
+    }else if(outerLengthInFeet > maxLengthToPutBeamInFeet && (outerLengthInFeet > 0)){
+            beams = 2 + Math.floor( outerLengthInFeet / maxBoardLengthInFeet);
+    
+        // other cas zero
+        }else {
+        beams =  0;
+    };
 
-return fourByFour;
+return beams;
+}
+
+function getBoards(outerLengthInFeet: number){
+
+    let boards = 0;
+    let boardsAround = 0;
+    let boardInBetween = 0;
+
+    // less than 20 feet, 
+    if(outerLengthInFeet < maxLengthToPutBeamInFeet && (outerLengthInFeet > 0)){
+
+        let bottomAndTopBeam = 2 * (Math.ceil(outerLengthInFeet/maxBoardLengthInFeet));
+        let sideBeams = 2 ;
+        boardsAround = 2 + (2 * sideBeams) + bottomAndTopBeam ;
+
+    
+    // greater than 20 feet, extra boards for cornors and in between
+    }else if(outerLengthInFeet > maxLengthToPutBeamInFeet && (outerLengthInFeet > 0)){
+        
+        // x/20 less than 1
+        // x * 12 -10 -14.5 /16 in between boards
+        // total boards = in between + boards_around
+        if(outerLengthInFeet/maxLengthToPutBeamInFeet< 1){
+
+            boardInBetween = calcInnerWallwidth(outerLengthInFeet) / distanceBetweenStudsInInch; 
+        
+        //x/20 = > 1 
+        //inbetweenboard = longPartBoard + shortPartBoard
+        
+        }else if(outerLengthInFeet/maxLengthToPutBeamInFeet< 1) {
+
+            //longPart = x/16 ==> whole number==> *11
+            let longPart = Math.floor(outerLengthInFeet/distancebetweenBeamInFeet)
+                longPart = longPart * Math.ceil(calcInnerWallwidth(outerLengthInFeet));
+                
+            //Shortpart=x/16==> remaining => *16=>*12-5-1.5-14.5/16
+            let shortPart = outerLengthInFeet/distancebetweenBeamInFeet;
+                shortPart = (shortPart - Math.floor(shortPart))*100;
+
+            boardInBetween = shortPart + longPart;
+
+        } 
+        // total boards = in between + boards_around
+        boards = boardsAround + boardInBetween;
+        
+        // other cas zero
+        }else {
+            boards = 0;
+    };
+
+
+return boards;
 }
 
 //calculat total beams(4x4) and total studs required for one wall
 export default function calcWall (outerLengthInFeet :number){
     
-    let beams = getFourByFour(outerLengthInFeet);
+    let beams = getBeam(outerLengthInFeet);
+   
+    let boards = getBoards(outerLengthInFeet);
     
-    // convert to inches
-    let wall = calcInnerWallwidth(outerLengthInFeet);
+    let innerWall = calcInnerWallwidth(outerLengthInFeet);
 
-    //substract 16” sections + wedith of lumber     
-    wall = wall - ( distanceBetweenStudsInInch - FourByFourWidthInInches);
-    
     //Divided by section to calculate the total number of lumer need for a wall
-    wall = wall / distanceBetweenStudsInInch;
+    let studs = innerWall / distanceBetweenStudsInInch;
 
     //Each wall required one 2x4 on the top, bottom, and sides
-    wall = 3 + Math.ceil(outerLengthInFeet/maxBoardLengthInFeet) + wall;
+    studs = 3 + Math.ceil(outerLengthInFeet/maxBoardLengthInFeet) + studs;
 
-    //Round up a decimal in the final calculation of lumbers
-    let studs = Math.ceil(wall);
-       
+    //final calculation of lumbers
+    studs = Math.ceil(studs) + boards;
 
 return {
     studs : studs,
     beams : beams
  } ;
 }
+
+
+/* 
+let fourByFour = 0;
+    let lengthInInches = calcInnerWallwidth(outerLengthInFeet);
+
+    let innerWall = calcInnerWallwidth(outerLengthInFeet);
+
+    let bottomAndTopBeam = 2 * (Math.ceil(outerLengthInFeet/maxBoardLengthInFeet));
+ 
+    let sideBeams = 2 ;
+    let totalBeam = 2 + (2 * sideBeams) + bottomAndTopBeam ;
+ */
+
+
+
 
 
  // if(beams < 0){
@@ -125,4 +186,22 @@ return {
 //     let studsOnTopAndBottom = calcStudsInTopAndBottom(lengthInInches);
     
 //     let studs = studsInsideWall + studsOnTopAndBottom 
+
+
+
+
+
+// //this calculates the number of studs required for a length of the wall
+// function studsInLength (lengthInInches:number, distanceApartInches:number){
+
+//     return Math.ceil(lengthInInches / distanceApartInches);
+// }
+
+// function calcStudsInTopAndBottom(lengthInInches:number){
+
+//     let maxBoardLengthInInches = convertToInch(maxBoardLengthInFeet);
+
+// return Math.ceil(lengthInInches / maxBoardLengthInInches) * 2;
+// }
+
 

@@ -5,9 +5,9 @@ import calcWall from './Wall';
 export default function buildHouse(widthInFeet: number, lengthInFeet: number){
 
     //calculat total Beams(4x4) required 
-    let beams = 2 * calcWall(widthInFeet).beams;
+    let beams =  calcWall(widthInFeet).beams;
     //4 beams in the corners 
-        beams = 4 + beams + ( 2 * calcWall(lengthInFeet).beams );
+        beams =  beams + ( calcWall(lengthInFeet).beams );
 
     //calculat total studs(2x4) required     
     let studs = 2 * calcWall(widthInFeet).studs;
