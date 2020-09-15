@@ -41,8 +41,8 @@ yargs.command(
     function( args ){
 
          // User inputs (building dimensions)
-         let houseLengthInFeet =  Number( args.length) ;
-         let houseWidthInFeet = Number( args.width ) ;
+         let houseLengthInFeet = Number( args.length) ;
+         let houseWidthInFeet  = Number( args.width ) ;
          
  
          // Calculate total purchase beams + studs

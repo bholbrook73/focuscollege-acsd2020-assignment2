@@ -7,11 +7,11 @@ export default function buildHouse(widthInFeet: number, lengthInFeet: number){
     //calculat total Beams(4x4) required 
     let beams = 2 * calcWall(widthInFeet).beams;
     //4 beams in the corners 
-        beams = 4 + ( beams + ( 2 * calcWall(lengthInFeet).beams ));
+        beams = 4 + beams + ( 2 * calcWall(lengthInFeet).beams );
 
     //calculat total studs(2x4) required     
     let studs = 2 * calcWall(widthInFeet).studs;
-        studs = studs + ( calcWall(lengthInFeet).studs );
+        studs = studs + (2 * calcWall(lengthInFeet).studs);
 
     return  {
         studs : studs,
