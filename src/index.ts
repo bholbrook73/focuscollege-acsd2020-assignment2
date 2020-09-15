@@ -3,8 +3,6 @@
 import yargs = require('yargs');
 import {calcWallStuds} from './gerald'
 
-let parameters = 
-
 // create a new yargs "command"
 yargs.command(
 
@@ -56,7 +54,7 @@ yargs.command(
     // define the function we want to run once the arguments are parsed
     // the parsed arguments will be provided via the first paramater passed in
     // we've called it 'args' in this function
-    function( args ){
+    function(args){
         
         let geraldsWoodPurchase = calcWallStuds(Number(args.width), Number(args.length));
 
