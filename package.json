@@ -1,7 +1,7 @@
 {
   "name": "geralds-contracting",
   "version": "1.0.0",
-  "description": "",
+  "description": "Gerlands Calculator v2",
   "main": "index.js",
   "scripts": {
     "prestart": "tsc",

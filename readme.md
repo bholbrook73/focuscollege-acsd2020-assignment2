@@ -38,8 +38,8 @@ Test Log:
 | House Measurement | 2x4s and 4x4s Required | Application Returns | Last test Ran By |
 |       ---         |       ---              |         ---         |        ---
 | 8 x 8             | 40 2x4s and 4 4x4s     | 40 2x4s and 4 beams | Derrick
-| 16 x 24           | 93 2x4s and 7 4x4s     | 93 2x4s and 7 4x4s  | Derrick
-| 8 x 18            |                        | 62 2x4s and 4 4x4s  | Derrick
+| 16 x 24           | 91 2x4s and 7 4x4s     | 91 2x4s and 7 4x4s  | Derrick
+| 8 x 18            |                        | 62 2x4s and 5 4x4s  | Derrick
 ```
 ---
 ---
@@ -99,7 +99,13 @@ Gerald has also mentioned that he finds it difficult to re-write the application
 * Boards: 93
 * Beams: 7
 ---
-## About this application
+# About this application
+## *Currently in "beta"*
+Calculator does not yet split the walls when extra beam(s) are added.
+Feel free to send a message if you have suggestions on how to improve the accuracy. 
+
+---
+
 The scenario provided by Gerald had some issues so i've adjusted the equation to return the proper amount of lumber.
 * In the example Gerald did not add two extra 2x4s for additional beams placed in walls longer than 20 feet.
   +  The calculator ADDS two 2x4s for every beam added because for example a 16x24 house without two extra 2x4 for each additional beam makes for a weak point at the additional beam(s).

@@ -1,6 +1,4 @@
 // In process of rebuilding structure
-// Ran out of time!
-// I'll finish it !
 
 const twobyfouradd = 1.5 * 2
 const fourbyfouradd = 3.5 * 2
@@ -20,39 +18,30 @@ function Walltoinches (wallinfeet:number){
         twentyforty
 
         else if ((deductions >=480) && (deductions <=719)) // 40 to 59.9 feet
-        return deductions - 17
+        return deductions
 
         else ((deductions >=720) && (deductions <=959)) // 60 to 79.9 feet
-        return deductions - 20.5
+        return deductions 
 }   
 
-// Work in progress ( lines 27 to 57 )
 //20-39.9 foot walls
-function twentyforty(number:number){
-    let longside = number % 66 - 6.5 // or one 4x4 and two 2x4s
-        let longstuds = longside / Studspacing
-    let shortside = number % 33 - 10 // or two 4x4 and two 2x4s
-        let shortstuds = (shortside / 16)
-    return (longstuds + shortstuds) * sideboards
+function twentyforty(length:number){
+    let longside = Studwalls (length - 6.5 ) % 66 
+    let shortside = Studwalls (length - 10 ) % 33 
+    return longside + shortside
 }
-// //Buildonewall
-// function buildwalls (number:number){
-//     let length = Walltoinches(number)
-//     let studs = twentyforty(length) 
-//     let TB = boardsBottomTop(length) 
-//     return (studs + TB) * twowalls
-// }
 
-// function Studwalls (lengthininches:number){
-//     let numberofstuds = Math.floor (lengthininches / Studspacing )
-//     return numberofstuds
-// }
+function Studwalls (lengthininches:number){
+    let numberofstuds = Math.floor (lengthininches / Studspacing )
+    return numberofstuds
+}
+//Buildonewall
+function buildwalls (number:number){
+    let onewall= twentyforty(number) 
+    let TB = boardsBottomTop(number) 
+    return (onewall + TB) * twowalls
+}
 
-// function Housebuil (length:number, width:number ){
-//     let twowidthwalls = buildwalls(length) 
-//     let twolengthwalls = buildwalls(width)
-//     return twolengthwalls + twowidthwalls
-// }
 
 //40-59.9
 
@@ -66,6 +55,8 @@ function boardsBottomTop (Bottomandtop:number){
 
 // Calculates the amount of studs per wall
 // Length divided by 16 when called
+// currently adds 1 extra stud (1 per wall ) on 24ft wall because it's not split into two different sections
+// 24x16 should be 91(10% waste) but is 93..
 function WallStuds (lengthininches:number){
     let numberofstuds = Math.floor (lengthininches / 16)
     return numberofstuds
@@ -75,7 +66,7 @@ function WallStuds (lengthininches:number){
 function Wallsbuilt (number:number){
     let oneWallinches = Walltoinches(number) // oneWallinches is the wall in inches(calls the Walltoinches function)
     let onewallstuds = WallStuds (oneWallinches) // Takes the wall length in inches and divides by 16 ( rounded down )
-    let onewallTBS = boardsBottomTop(oneWallinches) + sideboards // Calculates amount of boards for top and bottom and adds two for side boards
+    let onewallTBS = boardsBottomTop(oneWallinches) + 2 // Calculates amount of boards for top and bottom and adds two for side boards
     let twowalltotal = (onewallstuds + onewallTBS) * twowalls 
 return twowalltotal
 }
