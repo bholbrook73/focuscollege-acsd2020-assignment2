@@ -18,6 +18,20 @@ Advanced Certificate of Software Development located in Kelowna, BC and Surrey, 
 ## Running the Application
 **_Do not use ~~node dist/index.js~~_**
 
+***_Please, use the following commands to install [yargs packages] and TypeScript yargs definitions before running the application_***.
+
+
+Install yargs
+
+```
+npm i yargs
+```
+TypeScript yargs definitions
+
+```
+npm i @types/yargs --save-dev
+```
+
 To **build** the application
 ```
 tsc

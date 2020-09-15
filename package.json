@@ -1,7 +1,7 @@
 {
   "name": "geralds-contracting",
   "version": "1.0.0",
-  "description": "",
+  "description": "Focus College ACSD Assignment 2, Gerald's Contracting Application",
   "main": "index.js",
   "scripts": {
     "prestart": "tsc",

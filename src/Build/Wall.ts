@@ -89,6 +89,7 @@ function getBoards(outerLengthInFeet: number){
             let shortPart  = outerLengthInFeet/distancebetweenBeamInFeet;
                 //return the franction of number(Remaining)
                 shortPart  = (shortPart - Math.floor(shortPart))*100;
+                
             boardInBetween = shortPart + longPart;
         } 
         //total boards = in between + boards_around
