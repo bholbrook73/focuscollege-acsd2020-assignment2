@@ -1,3 +1,7 @@
+//I worked hard on this.
+//Not sure what went wrong. I tried.
+//hours not wasted granted, it was good practice.
+
 import { Console, debug } from 'console';
 import { command, number } from 'yargs';
 
@@ -6,7 +10,7 @@ import { command, number } from 'yargs';
 
 import yargs = require('yargs');
 
-let parameters
+let parameters =
 //length, width; //added = length,width;
 
 //yargs
@@ -53,6 +57,7 @@ yargs.command(
         // node dist/index.js calc-lumber-required --width 8 --legth 8
         //npm start -- calc-lumber-required --width 18 --length 8
         //this was an example, why then the example is different :U
+        //npm start -- calc-lumber-required --width 49 --length 22
 
         length: {
             type: 'number',
@@ -71,23 +76,18 @@ yargs.command(
    
     function( args ){
 
-        //I need a function that can extract args? arguments, 
 
+//things tried quite a few things
         //length = length:yargs.Arguments;
         // length:args;
 
-        length:Number;
-        width:Number;
+        //length:Number;
+        //width:Number;
 
-        let length = args.l;
-        let width = args.w;
-
-
-
+        //let length = args.l;
+        //let width = args.w;
     // let length = args.length;
     // let width = args.width;
-//this can not be correct?
-
    // length:number;
     // width:number;
 
@@ -214,9 +214,11 @@ function  FinaleTotalof2x4s(TotalCeiling2x4Calc:number, TotalFloor2x4Calc:number
         let Total2x4 = (TotalCeiling2x4Calc+TotalFloor2x4Calc+Vertical2x2inLength+Vertical2x2inWidth+PillarTally);
         return Total2x4;
     }
+
 //Pillar Total But it corresponds 1:1 to each pillar having it's own pet 2by4
 
 
+let Tracker2x4 = AlittleOntheTop;
 //pillar tally +10% rounded
 function AlittleOntheTop(FinaleTotalof2x4s:number):number
     {
@@ -224,25 +226,33 @@ function AlittleOntheTop(FinaleTotalof2x4s:number):number
         //no real reason to use 10/100 instead of .1 just looks better
         return finaltotalWithError;
     }
-    console.log(AlittleOntheTop);
 
+
+let PillarTracker = PillarPlus;
 // pillar tally +10% rounded
 function PillarPlus(PillarTotal:number):number
     {
         let FinalPillarTally = Math.round(PillarTotal+(PillarTotal*(10/100)));
         return FinalPillarTally;
     }
-    console.log(PillarPlus);
 
-    
-    console.log("Total 2x4's" + (AlittleOntheTop));
-    console.log("Total 4x4's" + PillarPlus); 
-//not sure why these aren't running :I
 
-        console.log( args )
-        
+
+console.log("Total 4x4's" + PillarTracker); 
+console.log("Total 2x4's" + Tracker2x4);
+
+
+        console.log( args )    
             //these functions don't do anything.   
     }
+
+
+
+
+
+
+
+
 
 );// :(
 
