@@ -22,7 +22,7 @@ export default function postsInBuilding(houseWidthInFeet:number, houseLengthInFe
 //totalPosts BEFORE waste is accounted for
     totalPosts += postsInWallWidth + postsInWallLength;
 
-//Accouts for the waste here
+// Accouts for the waste here
 totalPosts = accountForWaste(totalPosts);
     return totalPosts;
 }
