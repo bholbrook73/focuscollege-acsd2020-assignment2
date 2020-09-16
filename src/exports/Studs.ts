@@ -30,7 +30,7 @@ function WallStuds (lengthininches:number) {
             let shortside = split - Math.floor(split)
                 let shortstuds = Math.floor(((shortside * oneboardinches) - 10) / Studspacing) 
         let studstotal = longstuds + shortstuds
-    return studstotal
+    return studstotal + sideboards
       
 }
 

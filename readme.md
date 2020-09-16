@@ -102,6 +102,7 @@ Gerald has also mentioned that he finds it difficult to re-write the application
 # About this application
 
 *  It must be noted that Gerlad does not add a beam for every 20 feet. The walls integrity gets weaker and weaker the longer it is.
+* Gerlads example did not include two extra 2x4s added per beam. This calculator does.
 
 
 
