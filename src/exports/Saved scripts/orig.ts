@@ -11,24 +11,11 @@ function Walltoinches (Wallfeet:number) {
     return deducted10
 }
 
-// Total beams
-function totalbeams (number:number){
-    let extrabeams = Math.max (number / 96 ,240 / 96)
-    return extrabeams 
-}
-
-
 // account for top and bottom
 // To be used when total length is input5
 function boardsBottomTop (Bottomandtop:number){
     let totalboards = Math.ceil (Bottomandtop / oneboardinches * 2);
     return totalboards
-}
-
-// Function to add 10% waste
-function TenPercent (onepointone:number){
-    let percent = onepointone * 1.10 
-    return percent
 }
 
 // Calculates the amount of studs per wall

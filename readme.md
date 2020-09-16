@@ -16,7 +16,7 @@ To run a calculation, pass in two parameters:
 * Will return with total studs and beams needed for your project !
 
 In case you have not the dependencies, you need to run:
-*  Npm install
+*  npm install
 *  npm i yargs
 
 #### Examples:
@@ -100,17 +100,8 @@ Gerald has also mentioned that he finds it difficult to re-write the application
 * Beams: 7
 ---
 # About this application
-## *Currently in "beta"*
-Feel free to send a message if you have suggestions on how to improve the accuracy. 
 
----
-
-The scenario provided by Gerald had some issues so i've adjusted the equation to return the proper amount of lumber.
-* In the example Gerald did not add two extra 2x4s for additional beams placed in walls longer than 20 feet.
-  +  The calculator ADDS two 2x4s for every beam added because for example a 16x24 house without two extra 2x4 for each additional beam makes for a weak point at the additional beam(s).
-  +  For every beam added you are essentially creating a new wall within a wall.
-
-* Arguments return total lumber needed with without 10% waste and with 10% rounded up.
+*  It must be noted that Gerlad does not add a beam for every 20 feet. The walls integrity gets weaker and weaker the longer it is.
 
 
 

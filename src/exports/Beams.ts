@@ -9,26 +9,16 @@ function feettoinches (Wallfeet:number) {
     return lengthmultiplied
 }
 
-
-//Could also be accomplished in feet 
+// Could also be accomplished in feet 
 //Calculates the amount of posts for every 20 feet without innerwall deductions
 function TwoWalls (Wall12:number){
     let Wallinches = feettoinches(Wall12 / 2)
-        if ((Wallinches >=0) && (Wallinches <=239)) // 0 to 19.9 feet in inches
+        if (Wallinches < 239) // 0 to 19.9 feet in inches
             return 0
         
-        else if ((Wallinches >=240) && (Wallinches <=479)) // 20 to 39.9 feet in inches
-            return 2 
-            
-        else if ((Wallinches >=480) && (Wallinches <=719)) // 40 to 59.9 feet in inches
-            return 4
-        
-        else ((Wallinches >=720) && (Wallinches <=959)) // 60 to 79.9 feet
-            return 6
-        
-        // This could go on and on..
+        else Wallinches >= 240  // 20 to 39.9 feet in inches
+            return 2       
 }
-
 
 // User inputs are taken in and the function calculates the final amount of posts
 // Adds WidthWalls (both sides) and lengthwalls (both sides) together
