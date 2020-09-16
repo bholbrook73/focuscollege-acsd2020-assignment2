@@ -15,7 +15,7 @@ To run a calculation, pass in two parameters:
 * The Length of one wall 
 * Will return with total studs and beams needed for your project !
 
-In case you have not the dependancies, you need to run:
+In case you have not the dependencies, you need to run:
 *  Npm install
 *  npm i yargs
 
@@ -101,7 +101,6 @@ Gerald has also mentioned that he finds it difficult to re-write the application
 ---
 # About this application
 ## *Currently in "beta"*
-Calculator does not yet split the walls when extra beam(s) are added.
 Feel free to send a message if you have suggestions on how to improve the accuracy. 
 
 ---
