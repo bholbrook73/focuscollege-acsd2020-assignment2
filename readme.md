@@ -17,7 +17,6 @@ To run a calculation, pass in two parameters:
 
 In case you have not the dependencies, you need to run:
 *  npm install
-*  npm i yargs
 
 #### Examples:
 ```
@@ -38,7 +37,7 @@ Test Log:
 | House Measurement | 2x4s and 4x4s Required | Application Returns | Last test Ran By |
 |       ---         |       ---              |         ---         |        ---
 | 8 x 8             | 40 2x4s and 4 4x4s     | 40 2x4s and 4 beams | Derrick
-| 16 x 24           | 91 2x4s and 7 4x4s     | 91 2x4s and 7 4x4s  | Derrick
+| 16 x 24           | 95 2x4s and 7 4x4s     | 95 2x4s and 7 4x4s  | Derrick
 | 8 x 18            |                        | 62 2x4s and 5 4x4s  | Derrick
 ```
 ---
@@ -100,9 +99,7 @@ Gerald has also mentioned that he finds it difficult to re-write the application
 * Beams: 7
 ---
 # About this application
-
-*  It must be noted that Gerlad does not add a beam for every 20 feet. The walls integrity gets weaker and weaker the longer it is.
-* Gerlads example did not include two extra 2x4s added per beam. This calculator does.
+Gerlads example did not include two extra 2x4s added per beam. This calculator does.
 
 
 
