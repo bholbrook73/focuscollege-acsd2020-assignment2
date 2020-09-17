@@ -3,8 +3,6 @@
 import yargs = require('yargs');
 import { calculateHouseRequirements } from './gerald';
 
-let parameters = 
-
 // create a new yargs "command"
 yargs.command(
 

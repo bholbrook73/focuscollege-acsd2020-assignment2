@@ -1,6 +1,7 @@
 const BEAM_WIDTH = 3.5;
 const BOARD_LENGTH = ( 8 * 12 );
 const WASTE_MULTIPLIER = 0.1;
+const STUDS_OFFSET = 16;
 
 // beams are required every 20 feet at minimum
 const BEAMS_REQUIRED_EVERY_INCHES = (20 * 12);
@@ -22,31 +23,40 @@ function convertFeetToInches( feet:number ){
 
 }
 
-function getStudsInLength( inches:number ): number {
+function getPlatesInLength( inches:number ){
 
     // devide the length by 96 inches (8 feet) and round up
     // multiply by two because we're doing the top and bottom in one calculation
-    const topAndBottom = Math.ceil( inches / 96 ) * 2;
+    return Math.ceil( inches / BOARD_LENGTH ) * 2;
+
+}
+
+function getStudsInLength( inches:number ){
 
     // calculate the studs across
     // round up to account for the last one
-    let studs = Math.ceil( inches / 16 );
+    let studs = Math.ceil( inches / STUDS_OFFSET );
 
     // make sure we add an end piece if we have a perfect multiple of 16
-    const isNotPerfectWidth = Math.min( inches % 16, 1 );
+    const isNotPerfectWidth = Math.min( inches % STUDS_OFFSET, 1 );
     const perfectWidthExtension = (isNotPerfectWidth * -1) + 1;
-    studs += perfectWidthExtension;
+    return studs + perfectWidthExtension;
+
+}
+
+function getBoardsInLength( inches:number ): number {
+
+    const plates = getPlatesInLength( inches );
+    const studs = getStudsInLength( inches );
 
     console.log({
         function: "getStudsInLength",
         inches,
-        isNotPerfectWidth,
-        perfectWidthExtension,
-        topAndBottom,
+        plates,
         studs
     });
 
-    return topAndBottom + studs;
+    return plates + studs;
 
 }
 
@@ -110,7 +120,7 @@ function getFullSections( inches:number, beams:number ){
     fullSections = Math.min( fullSections, beams );
 
     // safeguard inches not requiring a beam and return value
-    fullSections *= isBeamRequired( inches );
+    fullSections = fullSections * isBeamRequired( inches );
 
     console.log({
         function: "getFullSections",
@@ -149,7 +159,7 @@ function buildWall( inches:number ){
     const requiredBeams = getRequiredBeamsInLength( inches );
     const fullSections = getFullSections( inches, requiredBeams );
     const lastSectionSize =  getLastSectionSize( inches, requiredBeams );
-    const studs = getStudsInLength( FULL_BOARD_SECTION_SIZE ) * fullSections + getStudsInLength( lastSectionSize );
+    const studs = getBoardsInLength( FULL_BOARD_SECTION_SIZE ) * fullSections + getBoardsInLength( lastSectionSize );
 
     const wall = {
         function: "buildWall",
